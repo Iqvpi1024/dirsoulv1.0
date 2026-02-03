@@ -11,7 +11,7 @@
 
 | 阶段 | 任务数 | 已完成 | 进行中 | 未开始 | 完成率 |
 |------|--------|--------|--------|--------|--------|
-| Phase 1: 准备与环境 | 5 | 0 | 1 | 4 | 20% |
+| Phase 1: 准备与环境 | 5 | 1 | 0 | 4 | 40% |
 | Phase 2: 原始记忆层 | 5 | 0 | 0 | 5 | 0% |
 | Phase 3: 事件记忆层 | 6 | 0 | 0 | 6 | 0% |
 | Phase 4: 结构化记忆 | 6 | 0 | 0 | 6 | 0% |
@@ -19,7 +19,7 @@
 | Phase 6: Agent与插件 | 7 | 0 | 0 | 7 | 0% |
 | Phase 7: 存储与安全 | 5 | 0 | 0 | 5 | 0% |
 | Phase 8: 高级功能 | 6 | 0 | 0 | 6 | 0% |
-| **总计** | **47** | **0** | **1** | **46** | **2%** |
+| **总计** | **47** | **1** | **0** | **46** | **2%** |
 
 ---
 
@@ -43,20 +43,12 @@
 - **依赖**: 1.1
 - **预计时间**: 0.5天
 - **完成标准**:
-  - [ ] `rustc --version` 输出正确
-  - [ ] Cargo.toml包含核心依赖：diesel、tokio、uuid、serde、anyhow
-  - [ ] `cargo build` 成功编译
-- **状态**: 未开始
-- **核心依赖**:
-  ```toml
-  [dependencies]
-  diesel = { version = "2.1", features = ["postgres", "chrono"] }
-  tokio = { version = "1", features = ["full"] }
-  uuid = { version = "1.7", features = ["v4", "serde"] }
-  serde = { version = "1.0", features = ["derive"] }
-  anyhow = "1.0"
-  thiserror = "1.0"
-  ```
+  - [x] `rustc --version` 输出正确 (1.93.0)
+  - [x] Cargo.toml包含核心依赖：diesel、tokio、uuid、serde、anyhow
+  - [x] `cargo build` 成功编译
+  - [x] 安装 libpq-dev (PostgreSQL 客户端库)
+- **状态**: 已完成
+- **备注**: 核心依赖已配置，二进制文件运行成功
 
 ### ID: 1.3 - PostgreSQL配置
 - **描述**: 安装Postgres 16+、创建数据库、启用pgvector扩展

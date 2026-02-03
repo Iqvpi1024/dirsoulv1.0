@@ -1,0 +1,54 @@
+[package]
+name = "dirsoul"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+authors = ["DirSoul Contributors"]
+description = "本地优先的永久记忆框架 - 构建你的数字大脑"
+license = "MIT"
+repository = "https://github.com/Iqvpi1024/dirsoulv1.0"
+readme = "../../README.md"
+
+[dependencies]
+# 异步运行时
+tokio = { version = "1", features = ["full"] }
+
+# 数据库 ORM
+diesel = { version = "2.1", features = ["postgres", "chrono", "uuid", "serde_json"] }
+
+# 序列化/反序列化
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# UUID 生成
+uuid = { version = "1.7", features = ["v4", "serde"] }
+
+# 时间处理
+chrono = { version = "0.4", features = ["serde"] }
+
+# 错误处理
+anyhow = "1.0"
+thiserror = "1.0"
+
+# 加密 (Fernet 兼容实现，用于端到端加密)
+fernet = "0.2"
+
+# 日志
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# 环境变量
+dotenv = "0.15"
+
+[dev-dependencies]
+# 测试
+tokio-test = "0.4"
+
+[features]
+default = []
+# 数据库测试功能
+test-database = ["diesel/postgres"]
+
+[[bin]]
+name = "dirsoul"
+path = "src/main.rs"
