@@ -14,7 +14,7 @@ Complete guide for deploying DirSoul using Docker and Docker Compose.
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/Iqvpi1024/dirsoulv1.0.git
+git clone https://github.com/iqvpi1024/dirsoulv1.0.git
 cd dirsoulv1.0
 ```
 
@@ -439,5 +439,5 @@ OLLAMA_NUM_THREADS=4 docker-compose up -d ollama
 ## Support
 
 - **Documentation**: See `docs/` directory
-- **Issues**: https://github.com/Iqvpi1024/dirsoulv1.0/issues
-- **Chat**: https://github.com/Iqvpi1024/dirsoulv1.0/discussions
+- **Issues**: https://github.com/iqvpi1024/dirsoulv1.0/issues
+- **Chat**: https://github.com/iqvpi1024/dirsoulv1.0/discussions

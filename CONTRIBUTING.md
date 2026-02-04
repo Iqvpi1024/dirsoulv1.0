@@ -6,7 +6,7 @@
 
 ### 报告 Bug
 
-- 使用 [GitHub Issues](https://github.com/Iqvpi1024/dirsoulv1.0/issues)
+- 使用 [GitHub Issues](https://github.com/iqvpi1024/dirsoulv1.0/issues)
 - 标题格式：`[Bug] 简短描述`
 - 包含：
   - 复现步骤
@@ -17,7 +17,7 @@
 
 ### 提交功能建议
 
-- 使用 [GitHub Issues](https://github.com/Iqvpi1024/dirsoulv1.0/issues)
+- 使用 [GitHub Issues](https://github.com/iqvpi1024/dirsoulv1.0/issues)
 - 标题格式：`[Feature] 功能名称`
 - 说明：
   - 功能用途
@@ -71,8 +71,8 @@ pytest src/python/
 
 ## 💬 讨论
 
-- **技术问题**: 使用 [GitHub Discussions](https://github.com/Iqvpi1024/dirsoulv1.0/discussions)
-- **Bug报告**: 使用 [GitHub Issues](https://github.com/Iqvpi1024/dirsoulv1.0/issues)
+- **技术问题**: 使用 [GitHub Discussions](https://github.com/iqvpi1024/dirsoulv1.0/discussions)
+- **Bug报告**: 使用 [GitHub Issues](https://github.com/iqvpi1024/dirsoulv1.0/issues)
 
 ## 📜 行为准则
 

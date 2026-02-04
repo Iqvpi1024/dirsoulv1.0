@@ -6,7 +6,7 @@ rust-version = "1.75"
 authors = ["DirSoul Contributors"]
 description = "本地优先的永久记忆框架 - 构建你的数字大脑"
 license = "MIT"
-repository = "https://github.com/Iqvpi1024/dirsoulv1.0"
+repository = "https://github.com/iqvpi1024/dirsoulv1.0"
 readme = "../../README.md"
 
 [dependencies]

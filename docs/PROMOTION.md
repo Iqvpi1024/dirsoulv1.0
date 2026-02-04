@@ -30,7 +30,7 @@
 
 完全本地运行，零云依赖。
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 
 #AI #Rust #LocalLLM
 ```
@@ -51,7 +51,7 @@ github.com/Iqvpi1024/dirsoulv1.0
 
 用 Claude 手搓的。
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 ```
 
 **推文3:**
@@ -68,7 +68,7 @@ github.com/Iqvpi1024/dirsoulv1.0
 
 它是数字大脑。
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 ```
 
 ### Thread 2: 人设故事
@@ -85,7 +85,7 @@ DeepSeek 忘了我的偏好。
 
 于是我开始撸代码。
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 ```
 
 **推文2:**
@@ -101,7 +101,7 @@ Claude 帮我理解：
 
 15 天，我学会了 Rust。
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 ```
 
 **推文3:**
@@ -117,7 +117,7 @@ Day 30: 它终于记住了我的初恋
 
 我给 AI 装上了海马体。
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 ```
 
 ---
@@ -135,7 +135,7 @@ Show HN: I built a persistent memory layer for local LLMs
 - 事件+实体+关系抽取
 - 一键 Docker 部署
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 
 技术栈：Rust + PostgreSQL + Ollama + Python
 ```
@@ -171,7 +171,7 @@ github.com/Iqvpi1024/dirsoulv1.0
 
 完全本地运行，零云依赖。
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 
 求 Star！求反馈！
 ```
@@ -203,7 +203,7 @@ Use Cases:
 
 Completely local. Privacy first.
 
-github.com/Iqvpi1024/dirsoulv1.0
+github.com/iqvpi1024/dirsoulv1.0
 ```
 
 ---
@@ -322,7 +322,7 @@ Hi [姓名],
 - 完全本地运行 (隐私优先)
 - 我用Claude手搓的Rust系统 (0代码基础)
 
-GitHub: github.com/Iqvpi1024/dirsoulv1.0
+GitHub: github.com/iqvpi1024/dirsoulv1.0
 
 如果您觉得有趣，求分享给您的社区！
 

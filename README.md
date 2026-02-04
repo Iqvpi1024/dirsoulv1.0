@@ -7,8 +7,8 @@
 [![Rust](https://img.shields.io/badge/Rust-1.70-orange)](https://www.rust-lang.org)
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Iqvpi1024/dirsoulv1.0?style=social)](https://github.com/Iqvpi1024/dirsoulv1.0/stargazers)
-[![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-FF69B4?logo=githubsponsors&style=social)](https://github.com/sponsors/Iqvpi1024)
+[![GitHub stars](https://img.shields.io/github/stars/iqvpi1024/dirsoulv1.0?style=social)](https://github.com/iqvpi1024/dirsoulv1.0/stargazers)
+[![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-FF69B4?logo=githubsponsors&style=social)](https://github.com/sponsors/iqvpi1024)
 
 **"26岁运营，0代码基础，用SLM给本地LLM装上了永久记忆。"**
 
@@ -140,7 +140,7 @@ ports:
 ### Docker (Recommended)
 
 ```bash
-git clone https://github.com/Iqvpi1024/dirsoulv1.0.git
+git clone https://github.com/iqvpi1024/dirsoulv1.0.git
 cd dirsoulv1.0
 docker-compose up -d
 ```
@@ -266,7 +266,7 @@ AI: 你叫赵杰。
 <div align="center">
 
 ### GitHub Sponsors
-[![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-FF69B4?logo=githubsponsors&style=social)](https://github.com/sponsors/Iqvpi1024)
+[![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-FF69B4?logo=githubsponsors&style=social)](https://github.com/sponsors/iqvpi1024)
 
 ### 扫码赞助
 <img src="docs/assets/wechat-pay.jpg" alt="微信赞赏" width="150"/>
@@ -348,9 +348,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## 💬 Community
 
-- **GitHub Issues**: [Bug reports & feature requests](https://github.com/Iqvpi1024/dirsoulv1.0/issues)
-- **Discussions**: [Q&A & show-and-tell](https://github.com/Iqvpi1024/dirsoulv1.0/discussions)
-- **Twitter**: [@Iqvpi1024](https://twitter.com/Iqvpi1024)
+- **GitHub Issues**: [Bug reports & feature requests](https://github.com/iqvpi1024/dirsoulv1.0/issues)
+- **Discussions**: [Q&A & show-and-tell](https://github.com/iqvpi1024/dirsoulv1.0/discussions)
+- **Twitter**: [@iqvpi1024](https://twitter.com/iqvpi1024)
 
 ---
 
@@ -358,7 +358,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 **觉得 DirSoul 有用？考虑赞助支持！**
 
-- **GitHub Sponsors**: [https://github.com/sponsors/Iqvpi1024](https://github.com/sponsors/Iqvpi1024)
+- **GitHub Sponsors**: [https://github.com/sponsors/iqvpi1024](https://github.com/sponsors/iqvpi1024)
 - **详见**: [docs/Sponsors.md](docs/Sponsors.md)
 
 您的赞助将帮助：
@@ -390,7 +390,7 @@ This project stands on the shoulders of giants:
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Iqvpi1024/dirsoulv1.0&type=Date)](https://star-history.com/#Iqvpi1024/dirsoulv1.0&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=iqvpi1024/dirsoulv1.0&type=Date)](https://star-history.com/#iqvpi1024/dirsoulv1.0&Date)
 
 ---
 
@@ -398,7 +398,7 @@ This project stands on the shoulders of giants:
 
 **"We're not building a smarter chatbot. We're building a digital brain that grows."**
 
-**Made with ❤️ by [Jie Zhao](https://github.com/Iqvpi1024)**
+**Made with ❤️ by [Jie Zhao](https://github.com/iqvpi1024)**
 
 *26岁电商运营 → 0代码基础 → Rust开发者 → AI时代的钢铁侠*
 

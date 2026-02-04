@@ -14,7 +14,7 @@
 
 ### 1. GitHub Sponsors (推荐)
 
-**链接**: https://github.com/sponsors/Iqvpi1024
+**链接**: https://github.com/sponsors/iqvpi1024
 
 **赞助档位**：
 - 🌟 **$5/月** - 支持者 (你的名字会出现在Sponsors列表)
@@ -54,19 +54,19 @@ bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
 
 ### 🌟 Bronze Sponsors ($5+)
 - 暂无
-- [成为赞助者](https://github.com/sponsors/Iqvpi1024)
+- [成为赞助者](https://github.com/sponsors/iqvpi1024)
 
 ### 🚀 Silver Sponsors ($20+)
 - 暂无
-- [成为赞助者](https://github.com/sponsors/Iqvpi1024)
+- [成为赞助者](https://github.com/sponsors/iqvpi1024)
 
 ### 💎 Gold Sponsors ($50+)
 - 暂无
-- [成为赞助者](https://github.com/sponsors/Iqvpi1024)
+- [成为赞助者](https://github.com/sponsors/iqvpi1024)
 
 ### 🏆 Platinum Sponsors ($100+)
 - 暂无
-- [成为赞助者](https://github.com/sponsors/Iqvpi1024)
+- [成为赞助者](https://github.com/sponsors/iqvpi1024)
 
 ---
 
@@ -84,8 +84,8 @@ bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh
 ## 📧 联系方式
 
 - **Email**: your-email@example.com
-- **Twitter**: [@Iqvpi1024](https://twitter.com/Iqvpi1024)
-- **GitHub**: [Iqvpi1024](https://github.com/Iqvpi1024)
+- **Twitter**: [@iqvpi1024](https://twitter.com/iqvpi1024)
+- **GitHub**: [iqvpi1024](https://github.com/iqvpi1024)
 
 ---
 
