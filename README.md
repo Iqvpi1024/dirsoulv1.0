@@ -2,7 +2,7 @@
 
 # 🧠 DirSoul
 
-### **Give your AI a Soul.** The missing long-term memory layer for local LLMs.
+### **Give your Local LLM Long-term Memory.** AI-Native permanent memory framework.
 
 [![Rust](https://img.shields.io/badge/Rust-1.70-orange)](https://www.rust-lang.org)
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org)
@@ -10,7 +10,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Iqvpi1024/dirsoulv1.0?style=social)](https://github.com/Iqvpi1024/dirsoulv1.0/stargazers)
 [![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-FF69B4?logo=githubsponsors&style=social)](https://github.com/sponsors/Iqvpi1024)
 
-**"我把 DeepSeek 聊崩了，但我把这 3 个月的记忆变成了一片星空。"**
+**"26岁运营，0代码基础，用SLM给本地LLM装上了永久记忆。"**
 
 </div>
 
