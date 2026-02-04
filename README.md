@@ -1,101 +1,270 @@
-# DirSoul
+<div align="center">
 
-> **本地优先的永久记忆框架** - 构建你的数字大脑
+# 🧠 DirSoul
 
-DirSoul 是一个**本地优先、隐私优先的永久记忆框架**，支持：
+### **Give your AI a Soul.** The missing long-term memory layer for local LLMs.
 
-- 记录用户的一切交互（文本、语音、图片、文档）
-- AI驱动的动态事件抽取与认知演化
-- 插件化扩展（决策分析、心理分析等）
-- 10年+ 数据增长不崩溃
-- 类人认知能力：事件记忆 → 模式识别 → 概念形成 → 自主好奇
+[![Rust](https://img.shields.io/badge/Rust-1.70-orange)](https://www.rust-lang.org)
+[![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Iqvpi1024/dirsoulv1.0?style=social)](https://github.com/Iqvpi1024/dirsoulv1.0)
 
-## 项目定位
+**"我把 DeepSeek 聊崩了，但我把这 3 个月的记忆变成了一片星空。"**
 
-**不是一个聊天机器人，而是一个数字大脑：拥有情节记忆、能从经历中学习、支持插件扩展的认知操作系统。**
-
-## 核心特性
-
-### AI-Native 与动态性
-- 拒绝硬编码规则，使用 Phi-4-mini 本地推理
-- 系统从经验学习，而非死记硬背
-
-### 分层架构
-```
-Layer 1: 原始记忆 (Raw Memory)   - Append-only，全量保留，永不修改
-Layer 2: 结构化记忆 (Structured)  - 事件/实体，带向量索引，可重算
-Layer 3: 认知记忆 (Cognitive)     - 派生视图/稳定概念，可过期/版本化
-上层:    Agent 与 插件             - 读写记忆，权限控制，沙箱隔离
-```
-
-### 慢抽象原则（2026共识）
-- **Derived Views 先行**：生成可丢弃的认知假设
-- **Promotion Gate 把关**：程序判定是否晋升为稳定概念
-- 避免 LLM 幻觉放大
-
-### DeepTalk 默认插件
-- 基于全局记忆的深度对话
-- 跨会话连续性认知
-- 情绪趋势感知
-
-## 技术栈
-
-| 组件 | 技术 | 理由 |
-|------|------|------|
-| 核心逻辑 | **Rust** | 内存安全、高性能、并发安全 |
-| 数据库 | **PostgreSQL 16+** | 支持分区、JSONB、pgvector |
-| 界面 | **Python + Streamlit** | 快速原型、易用 |
-| 本地AI | **Ollama + Phi-4-mini** | 3.8B参数，8G内存可运行 |
-| 向量检索 | **pgvector** | 与Postgres一体化 |
-| 对象存储 | **MinIO** | 冷数据归档 |
-
-## 开发状态
-
-> 当前版本：V2.1 (2026 整合版 + Phi-4-mini优化)
-
-详见 [todo/todo.md](todo/todo.md) 查看完整任务列表。
-
-## 快速开始
-
-### 环境要求
-- 8GB RAM
-- Rust 1.75+
-- PostgreSQL 16+
-- Python 3.12+
-- Ollama
-
-### 安装
-
-```bash
-# 克隆仓库
-git clone https://github.com/yourusername/dirsoulv1.git
-cd dirsoulv1
-
-# 安装 Phi-4-mini 模型
-ollama pull phi4-mini
-
-# 运行（开发中）
-cargo run
-```
-
-## 文档
-
-- [HEAD.md](todo/head.md) - 项目开发指南（给 AI 开发者）
-- [TODO.md](todo/todo.md) - 完整开发任务列表
-- [docs/](docs/) - 设计文档、API文档、测试结果等
-
-## 许可证
-
-MIT License - 详见 [LICENSE](LICENSE)
-
-## 致谢
-
-本项目参考了以下前沿研究：
-- [Recursive Language Models (MIT)](https://arxiv.org/abs/2512.24601)
-- [Google Titans + MIRAS](https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/)
-- [Mem0](https://mem0.ai/)
-- [RisuAI](https://github.com/kwaroran/Risuai)
+</div>
 
 ---
 
-*"我们不是在做一个更聪明的聊天机器人，而是在构建一个会成长的数字大脑。"*
+## 📖 Story
+
+> "26岁电商运营，0代码基础，用Claude手搓了一个Rust数据库，给本地LLM装上了海马体。"
+
+### 🎯 The Problem
+
+**DeepSeek-R1 很强，但它只有 7 秒记忆。**
+
+- ❌ 关掉窗口 → 它忘了你是谁
+- ❌ 问"我上周说想买啥车？" → "抱歉我不知道"
+- ❌ 你的 3 年聊天记录 → 散落在几十个log文件里
+
+**现有"记忆"方案的问题：**
+- 🤖 **ChatGPT/Claude**: 数据在云端，隐私裸奔
+- 💾 **MemGPT/Mem0**: 太复杂，需要云API key
+- 📓 **Obsidian/Roam**: 手动记录，AI无法理解
+- 🔧 **RAG框架**: 技术门槛高，普通用户玩不动
+
+### ✨ The Solution
+
+**DirSoul = 给本地LLM插上一根 10TB 的内存条**
+
+- ✅ **完全本地运行** - 隐私优先，零云依赖
+- ✅ **AI-Native设计** - 无硬编码规则，SLM主导
+- ✅ **持久化记忆** - 事件+实体+关系，10年+不崩溃
+- ✅ **一键Docker部署** - 8GB内存即可运行
+- ✅ **插件化扩展** - DeepTalk深度对话，决策分析
+
+### 🎬 Visual Impact
+
+**"Graph Porn" - 知识图谱可视化**
+
+```
+你 (中心节点)
+  ├── 初恋 (人名) ───> 2019年夏天 (时间) ──> 分手 (事件)
+  ├── 马自达CX-5 (车) ──> 操控好 (属性) ──> 油耗纠结 (情绪)
+  └── 电商运营 (职业) ──> 26岁 (年龄) ──> 想转行 (目标)
+```
+
+> **当你搜索"前任"时，所有相关节点瞬间亮起，右侧自动生成3年时间线。**
+
+---
+
+## 🚀 Quick Start
+
+### Docker (Recommended)
+
+```bash
+git clone https://github.com/Iqvpi1024/dirsoulv1.0.git
+cd dirsoulv1.0
+docker-compose up -d
+```
+
+Open http://localhost:8501 and start chatting.
+
+### Manual Install
+
+```bash
+# Install Ollama & qwen2:0.5b
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull qwen2:0.5b
+
+# Setup PostgreSQL
+sudo apt install postgresql-16
+sudo -u postgres createdb dirsoul
+
+# Run DirSoul
+cargo build --release
+./target/release/dirsoul
+
+# Run Streamlit UI
+cd src/python/streamlit
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## 🏗️ Architecture
+
+### Layered Memory System
+
+```
+Layer 4: Agent & Plugins
+   └─ DeepTalk (深度对话) | Decision (决策分析) | Psych (心理分析)
+
+Layer 3: Cognitive Memory (认知记忆)
+   └─ Derived Views (派生视图) | Stable Concepts (稳定概念)
+   └─ Promotion Gate (晋升把关) | Versioning (版本控制)
+
+Layer 2: Structured Memory (结构化记忆)
+   └─ Events (事件) | Entities (实体) | Relations (关系)
+   └─ Vector Index (向量索引) | Full-text Search (全文搜索)
+
+Layer 1: Raw Memory (原始记忆)
+   └─ Append-only Log (只追加日志) | Immutable (不可变)
+   └─ Encrypted Storage (加密存储)
+```
+
+### Tech Stack
+
+| Component | Tech | Why |
+|-----------|------|-----|
+| **Core Engine** | Rust | Memory safety, 8GB RAM friendly |
+| **UI** | Python/Streamlit | Rapid prototyping, 2026 Dark Glassmorphism |
+| **Database** | PostgreSQL 16+ | JSONB, partitioning, pgvector |
+| **Local AI** | Ollama + qwen2:0.5b | 352MB, fast, privacy-first |
+| **Vector Search** | pgvector | Integrated with Postgres |
+| **Container** | Docker | One-click deployment |
+
+---
+
+## 💡 Use Cases
+
+### Before vs After
+
+| Scenario | DeepSeek Alone | DeepSeek + DirSoul |
+|----------|----------------|-------------------|
+| "我叫什么？" | "我不知道" | "你是赵杰，26岁，电商运营" |
+| "我去年想买啥车？" | "抱歉，没有上下文" | "你去年11月提到马自达CX-5，因为操控好，但你在纠结油耗" |
+| "我明年多大？" | "我不知道你的年龄" | "你今年26岁，明年27岁" |
+
+### Real Demo
+
+```
+User: 我叫赵杰
+AI: 好的赵杰，我记住了。
+
+User: 我今年26岁，是一名电商运营
+AI: 记住了，26岁电商运营。
+
+User: 我明年多大？
+AI: 你明年27岁。
+
+User: 我叫什么？
+AI: 你叫赵杰。
+```
+
+> **完全本地运行，无API key，无云依赖。**
+
+---
+
+## 🎨 Features
+
+### ✅ AI-Native Design
+- No hardcoded rules
+- SLM (qwen2:0.5b) does all understanding
+- Learns from experience, not rote memorization
+
+### ✅ Privacy First
+- End-to-end encryption (Fernet)
+- Zero cloud dependency
+- All data stored locally
+
+### ✅ Plugin System
+- **DeepTalk** - Deep conversation with global memory
+- **Decision** - Multi-criteria decision analysis
+- **Psych** - Emotional trend analysis
+
+### ✅ 2026 Dark Glassmorphism UI
+- Modern dark theme
+- Glassmorphism effects
+- Bento Box layout
+- Micro-animations
+
+---
+
+## 📚 Documentation
+
+- [CLAUDE.md](CLAUDE.md) - AI Developer Configuration
+- [DEPLOYMENT.md](DEPLOYMENT.md) - Deployment Guide
+- [docs/skills/](docs/skills/) - 20+ Technical Skills
+
+---
+
+## 🛣️ Roadmap
+
+### V1.0 (Current)
+- ✅ Event memory with qwen2:0.5b
+- ✅ Entity linking & relation extraction
+- ✅ Cognitive view generation
+- ✅ DeepTalk plugin
+- ✅ Streamlit UI
+- ✅ Docker deployment
+
+### V2.0 (Q2 2026)
+- ⏳ Graph visualization (Echarts/D3.js)
+- ⏳ Telegram Bot integration
+- ⏳ Mobile app (Tauri)
+- ⏳ Multi-user support
+
+### V3.0 (Q4 2026)
+- ⏳ Federated learning
+- ⏳ Plugin marketplace
+- ⏳ Cloud sync (encrypted)
+
+---
+
+## 🤝 Contributing
+
+**We need your help!**
+
+- 🐛 Bug reports
+- 💡 Feature requests
+- 📖 Documentation improvements
+- 🧪 Test cases
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+---
+
+## 💬 Community
+
+- **GitHub Issues**: [Bug reports & feature requests](https://github.com/Iqvpi1024/dirsoulv1.0/issues)
+- **Discussions**: [Q&A & show-and-tell](https://github.com/Iqvpi1024/dirsoulv1.0/discussions)
+- **Twitter**: [@Iqvpi1024](https://twitter.com/Iqvpi1024)
+
+---
+
+## 📄 License
+
+MIT License - 详见 [LICENSE](LICENSE)
+
+**Free for personal & commercial use.**
+
+---
+
+## 🙏 Acknowledgments
+
+This project stands on the shoulders of giants:
+
+- [Recursive Language Models (MIT)](https://arxiv.org/abs/2512.24601) - Theoretical foundation
+- [Google Titans + MIRAS](https://research.google/blog/titans-miras-helping-ai-have-long-term-memory/) - Neural memory architecture
+- [Mem0](https://mem0.ai/) - Inspiration for memory management
+- [RisuAI](https://github.com/kwaroran/Risuai) - AI-native design principles
+
+---
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Iqvpi1024/dirsoulv1.0&type=Date)](https://star-history.com/#Iqvpi1024/dirsoulv1.0&Date)
+
+---
+
+<div align="center">
+
+**"We're not building a smarter chatbot. We're building a digital brain that grows."**
+
+**Made with ❤️ by [Jie Zhao](https://github.com/Iqvpi1024)**
+
+*26岁电商运营 → 0代码基础 → Rust开发者 → AI时代的钢铁侠*
+
+</div>
