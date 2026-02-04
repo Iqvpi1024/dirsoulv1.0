@@ -1,0 +1,180 @@
+# DirSoul Docker Compose Configuration
+#
+# Complete stack including:
+# - PostgreSQL database
+# - MinIO object storage (for cold data tiering)
+# - DirSoul Rust API
+# - Streamlit UI
+# - Ollama (local models)
+
+version: '3.8'
+
+services:
+  # ============================================================================
+  # PostgreSQL Database
+  # ============================================================================
+  db:
+    image: postgres:14-alpine
+    container_name: dirsoul-db
+    environment:
+      POSTGRES_USER: dirsoul
+      POSTGRES_PASSWORD: dirsoul_password
+      POSTGRES_DB: dirsoul_db
+      POSTGRES_INITDB_ARGS: "-E UTF8"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/rust/migrations:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dirsoul"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dirsoul-network
+
+  # ============================================================================
+  # MinIO Object Storage (for cold data tiering)
+  # ============================================================================
+  minio:
+    image: minio/minio:latest
+    container_name: dirsoul-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin123
+    volumes:
+      - minio_data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - dirsoul-network
+
+  # ============================================================================
+  # Ollama (Local LLM Service)
+  # ============================================================================
+  ollama:
+    image: ollama/ollama:latest
+    container_name: dirsoul-ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - dirsoul-network
+    # GPU support (uncomment if you have NVIDIA GPU)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  # ============================================================================
+  # DirSoul Application
+  # ============================================================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dirsoul-app
+    environment:
+      # Database
+      DIRSOUL_DATABASE_URL: postgresql://dirsoul:dirsoul_password@db:5432/dirsoul_db
+
+      # API Server
+      DIRSOUL_API_HOST: 0.0.0.0
+      DIRSOUL_API_PORT: 8080
+
+      # Ollama
+      OLLAMA_HOST: http://ollama:11434
+
+      # MinIO (for cold data tiering)
+      MINIO_ENDPOINT: minio:9000
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin123
+      MINIO_BUCKET: dirsoul-cold-data
+
+      # Encryption
+      DIRSOUL_ENCRYPTION_KEY_FILE: /app/data/.encryption_key
+
+      # Streamlit
+      STREAMLIT_SERVER_PORT: 8501
+      STREAMLIT_SERVER_ADDRESS: 0.0.0.0
+
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+      - ./prompts:/app/prompts
+      - ./logs:/app/logs
+    ports:
+      - "8080:8080"  # API
+      - "8501:8501"  # Streamlit UI
+    depends_on:
+      db:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - dirsoul-network
+    restart: unless-stopped
+
+  # ============================================================================
+  # Telegram Bot (Optional - comment out if not using)
+  # ============================================================================
+  telegram-bot:
+    build:
+      context: ./src/python/telegram_bot
+      dockerfile: Dockerfile
+    container_name: dirsoul-telegram-bot
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      DIRSOUL_API_URL: http://app:8080
+    depends_on:
+      app:
+        condition: service_healthy
+    networks:
+      - dirsoul-network
+    restart: unless-stopped
+    profiles:
+      - telegram  # Use: docker-compose --profile telegram up
+
+# ============================================================================
+# Networks
+# ============================================================================
+networks:
+  dirsoul-network:
+    driver: bridge
+
+# ============================================================================
+# Volumes
+# ============================================================================
+volumes:
+  postgres_data:
+    driver: local
+  minio_data:
+    driver: local
+  ollama_data:
+    driver: local

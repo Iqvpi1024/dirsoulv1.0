@@ -1,0 +1,13 @@
+# DirSoul RLM (Recursive Language Model) Requirements
+
+# HTTP Client
+aiohttp>=3.9.0
+
+# Type hints
+typing-extensions>=4.7.0
+
+# Logging
+structlog>=23.0.0
+
+# Date/Time handling
+python-dateutil>=2.8.0

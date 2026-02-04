@@ -1,0 +1,23 @@
+# DirSoul Model Configuration
+# This file defines which models are used for inference and embedding
+
+# Embedding Model (固定的 - 不建议用户修改)
+# 切换此模型需要重新索引所有记忆，非常耗时
+[embedding]
+provider = "ollama"
+model = "nomic-embed-text:v1.5"
+
+# Inference/Chat Model (用户可选 - 可随时切换)
+[inference]
+provider = "ollama"
+model = "phi4-mini"
+
+# For Ollama provider
+[inference.ollama]
+host = "http://127.0.0.1:11434"
+
+# For openai_compatible provider (API选项)
+# Uncomment to use API instead of local models
+# [inference.openai_compatible]
+# base_url = "https://api.deepseek.com"
+# api_key = ""

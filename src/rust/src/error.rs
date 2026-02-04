@@ -23,6 +23,24 @@ pub enum DirSoulError {
 
     #[error("未找到: {0}")]
     NotFound(String),
+
+    #[error("外部服务错误: {0}")]
+    ExternalError(String),
+
+    #[error("HTTP请求错误: {0}")]
+    HttpReqwest(#[from] reqwest::Error),
+
+    #[error("插件错误: {0}")]
+    Plugin(String),
+
+    #[error("插件未找到: {0}")]
+    PluginNotFound(String),
+
+    #[error("插件超时: {0}")]
+    PluginTimeout(String),
+
+    #[error("权限拒绝: {0}")]
+    PermissionDenied(String),
 }
 
 /// DirSoul 统一 Result 类型

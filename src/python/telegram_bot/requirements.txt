@@ -1,0 +1,13 @@
+# DirSoul Telegram Bot Requirements
+
+# Telegram Bot Framework
+python-telegram-bot==20.7
+
+# HTTP Client for API calls
+aiohttp==3.9.1
+
+# Async support
+asyncio==3.4.3
+
+# Type hints
+typing-extensions>=4.7.0

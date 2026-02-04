@@ -1,0 +1,24 @@
+# DirSoul Python Dependencies
+# Python Streamlit Interface for DirSoul Digital Brain
+
+# Streamlit - Web Interface
+streamlit>=1.28.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization
+plotly>=5.14.0
+
+# Date/Time
+python-dateutil>=2.8.0
+
+# HTTP Client (for calling Rust backend)
+requests>=2.31.0
+
+# Type Hints
+typing-extensions>=4.7.0
+
+# Environment Variables
+python-dotenv>=1.0.0

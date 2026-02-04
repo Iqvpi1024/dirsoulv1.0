@@ -12,6 +12,10 @@ readme = "../../README.md"
 [dependencies]
 # 异步运行时
 tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+
+# Actor框架
+actix = "0.13"
 
 # 数据库 ORM
 diesel = { version = "2.1", features = ["postgres", "chrono", "uuid", "serde_json"] }
@@ -19,6 +23,7 @@ diesel = { version = "2.1", features = ["postgres", "chrono", "uuid", "serde_jso
 # 序列化/反序列化
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+toml = "0.8"
 
 # UUID 生成
 uuid = { version = "1.7", features = ["v4", "serde"] }
@@ -32,6 +37,12 @@ thiserror = "1.0"
 
 # 加密 (Fernet 兼容实现，用于端到端加密)
 fernet = "0.2"
+zeroize = "1.7"
+base64 = "0.22"
+md5 = "0.7"
+
+# 数据压缩
+flate2 = "1.0"
 
 # 日志
 tracing = "0.1"
@@ -39,6 +50,24 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 # 环境变量
 dotenv = "0.15"
+
+# HTTP 客户端用于 Ollama API
+reqwest = { version = "0.12", features = ["json", "stream", "blocking"] }
+tokio-stream = "0.1"
+
+# HTTP Server for Python bridge
+warp = { version = "0.3", features = ["tls"] }
+
+# 正则表达式（用于规则引擎）
+regex = "1.10"
+futures-util = "0.3.31"
+
+# 临时文件（用于安全测试）
+tempfile = "3"
+
+# CLI utilities (for reindex tool)
+clap = { version = "4.4", features = ["derive"] }
+indicatif = "0.17"
 
 [dev-dependencies]
 # 测试
@@ -52,3 +81,7 @@ test-database = ["diesel/postgres"]
 [[bin]]
 name = "dirsoul"
 path = "src/main.rs"
+
+[[bin]]
+name = "reindex"
+path = "src/bin/reindex.rs"
