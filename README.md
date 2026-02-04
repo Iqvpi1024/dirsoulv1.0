@@ -234,6 +234,21 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ---
 
+## 💰 Sponsor
+
+**觉得 DirSoul 有用？考虑赞助支持！**
+
+- **GitHub Sponsors**: [https://github.com/sponsors/Iqvpi1024](https://github.com/sponsors/Iqvpi1024)
+- **详见**: [docs/Sponsors.md](docs/Sponsors.md)
+
+您的赞助将帮助：
+- 💻 服务器维护
+- 🧠 AI模型优化
+- 📚 文档完善
+- 🚀 新功能开发
+
+---
+
 ## 📄 License
 
 MIT License - 详见 [LICENSE](LICENSE)
