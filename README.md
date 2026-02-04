@@ -7,7 +7,8 @@
 [![Rust](https://img.shields.io/badge/Rust-1.70-orange)](https://www.rust-lang.org)
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Iqvpi1024/dirsoulv1.0?style=social)](https://github.com/Iqvpi1024/dirsoulv1.0)
+[![GitHub stars](https://img.shields.io/github/stars/Iqvpi1024/dirsoulv1.0?style=social)](https://github.com/Iqvpi1024/dirsoulv1.0/stargazers)
+[![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-FF69B4?logo=githubsponsors&style=social)](https://github.com/sponsors/Iqvpi1024)
 
 **"我把 DeepSeek 聊崩了，但我把这 3 个月的记忆变成了一片星空。"**
 
@@ -42,6 +43,62 @@
 - ✅ **持久化记忆** - 事件+实体+关系，10年+不崩溃
 - ✅ **一键Docker部署** - 8GB内存即可运行
 - ✅ **插件化扩展** - DeepTalk深度对话，决策分析
+
+---
+
+## 🔒 本地私有化部署 - 你的数据，你的掌控
+
+**为什么选择本地私有化部署？**
+
+```
+❌ ChatGPT/Claude (云端AI):
+   - 你的对话存储在他们的服务器
+   - 他们可以用来训练模型
+   - 隐私政策随时可能变
+   - 需要网络连接
+   - 每月订阅费用
+
+✅ DirSoul (本地私有化):
+   - 所有数据存储在你自己的服务器
+   - 你拥有完全控制权
+   - 端到端加密，即使数据库被盗也无法读取
+   - 离线也能用
+   - 一次部署，终身免费
+```
+
+### 🏠 完全私有化的优势
+
+| 特性 | 说明 |
+|------|------|
+| **🔐 零云依赖** | 所有数据存储在你自己的服务器 |
+| **🔒 端到端加密** | Fernet加密，即使数据库被盗也安全 |
+| **📡 无需联网** | 离线环境也能用 |
+| **👤 完全匿名** | 不上传任何用户信息 |
+| **💰 成本固定** | 一次部署，终身免费 |
+| **🎯 数据主权** | 你是数据的唯一主人 |
+
+### 🏢 企业场景
+
+**适合这些场景：**
+- 📋 **内部知识管理** - 公司文档、决策记录
+- 🏥 **医疗/法律** - 客户记录、案例库（敏感数据）
+- 💼 **个人助理** - 日记、想法、项目笔记
+- 🔬 **研究笔记** - 实验记录、文献阅读
+- 🎨 **创意工作** - 灵感收集、素材管理
+
+**部署方式：**
+```bash
+# 1. 本地部署 (单机)
+docker-compose up -d
+
+# 2. 局域网部署 (NAS/家庭服务器)
+# 修改 docker-compose.yml 中的端口映射
+ports:
+  - "8080:8080"  # 内网访问
+
+# 3. 离线环境
+# 完全不需要网络，所有AI本地运行
+```
 
 ### 🎬 Visual Impact
 
@@ -179,6 +236,28 @@ AI: 你叫赵杰。
 - Glassmorphism effects
 - Bento Box layout
 - Micro-animations
+
+---
+
+## 💰 Sponsor
+
+**觉得 DirSoul 有用？考虑赞助支持！**
+
+<div align="center">
+
+### GitHub Sponsors
+[![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-FF69B4?logo=githubsponsors&style=social)](https://github.com/sponsors/Iqvpi1024)
+
+### 扫码赞助
+<img src="docs/assets/wechat-pay.jpg" alt="微信赞赏" width="150"/>
+<img src="docs/assets/alipay.jpg" alt="支付宝" width="150"/>
+
+**任意金额，感谢支持！** 🙏
+
+### 详见
+[docs/Sponsors.md](docs/Sponsors.md) - 赞助档位、回报、企业合作
+
+</div>
 
 ---
 
