@@ -100,9 +100,11 @@ ports:
 # 完全不需要网络，所有AI本地运行
 ```
 
-### 🎬 Visual Impact
+### 🎬 Visual Impact (V2.0 规划中)
 
-**"Graph Porn" - 知识图谱可视化**
+**"Graph Porn" - 知识图谱可视化** 🔜 *Coming Soon*
+
+> **这是DirSoul V2.0的核心功能，目前正在开发中**
 
 ```
 你 (中心节点)
@@ -111,7 +113,25 @@ ports:
   └── 电商运营 (职业) ──> 26岁 (年龄) ──> 想转行 (目标)
 ```
 
-> **当你搜索"前任"时，所有相关节点瞬间亮起，右侧自动生成3年时间线。**
+**未来功能展示：**
+- 🔍 当你搜索"前任"时，所有相关节点瞬间亮起
+- 📊 右侧自动生成3年时间线
+- 🎨 动态星空图（D3.js/Echarts实现）
+- 🧠 实时知识演化动画
+
+**当前V1.0已实现：**
+- ✅ 后端：实体链接、关系抽取（PostgreSQL存储）
+- ✅ API：查询所有实体和关系
+- ⏳ 前端：图谱可视化（V2.0开发中）
+
+**技术栈（规划）：**
+- D3.js 或 Echarts - 图谱渲染
+- WebGPU - 大规模数据优化（10000+节点）
+- Force-directed graph - 力导向布局
+- 实时更新 - WebSocket推送
+
+**想提前体验？**
+- 查看 [docs/PROMOTION.md](docs/PROMOTION.md) 了解参与开发
 
 ---
 
@@ -279,11 +299,32 @@ AI: 你叫赵杰。
 - ✅ Streamlit UI
 - ✅ Docker deployment
 
-### V2.0 (Q2 2026)
-- ⏳ Graph visualization (Echarts/D3.js)
+### V2.0 (Q2 2026) - 知识图谱可视化
+- ⏳ **Graph visualization** (Echarts/D3.js) - 核心功能
+  - 节点：人名、地点、事件、情绪
+  - 边：关系强度、时间流向
+  - 搜索：实时高亮相关节点
+  - 时间线：自动生成事件时间线
 - ⏳ Telegram Bot integration
 - ⏳ Mobile app (Tauri)
 - ⏳ Multi-user support
+
+**技术方案：**
+```rust
+// 后端已有实体链接
+Entity {
+    name: "赵杰"
+    type: Person
+    attributes: { age: 26, job: "电商运营" }
+    relations: [
+        { target: "马自达CX-5", type: "想买", strength: 0.8 },
+        { target: "初恋", type: "前任", strength: 0.9 }
+    ]
+}
+
+// V2 前端渲染
+// 使用 D3.js force-directed graph
+```
 
 ### V3.0 (Q4 2026)
 - ⏳ Federated learning
